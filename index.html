@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgroStock  — Gestor de Inventario Agrícola</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <section id="auth-section" class="auth-container">
+    <div class="auth-card">
+      <h1> AgroStock</h1>
+      <p class="subtitle">Gestor de inventario agrícola</p>
+
+      <input id="email" type="email" placeholder="Correo electrónico" autocomplete="email">
+      <input id="password" type="password" placeholder="Contraseña (mín. 6 caracteres)" autocomplete="current-password">
+
+      <div class="auth-buttons">
+        <button id="btn-login" class="btn btn-primary">Iniciar sesión</button>
+        <button id="btn-register" class="btn btn-secondary">Registrarse</button>
+      </div>
+
+      <p id="auth-msg" class="msg"></p>
+    </div>
+  </section>
+
+  <section id="app-section" class="app-container" style="display: none;">
+
+    <header class="app-header">
+      <h1>AgroStock</h1>
+      <div class="user-info">
+        <span id="user-email"></span>
+        <button id="btn-logout" class="btn btn-logout">Salir</button>
+      </div>
+    </header>
+
+    
+    <form id="form-producto" class="form-producto">
+      <h2>Agregar producto</h2>
+
+      <div class="form-grid">
+        <input id="nombre" type="text" placeholder="Nombre del producto" required>
+        <input id="cantidad" type="number" placeholder="Cantidad" min="0" required>
+
+        <select id="categoria" required>
+          <option value=""> Categoría </option>
+          <option value="Semillas">Semillas</option>
+          <option value="Fertilizantes">Fertilizantes</option>
+          <option value="Herramientas">Herramientas</option>
+          <option value="Pesticidas">Pesticidas</option>
+          <option value="Otros">Otros</option>
+        </select>
+
+        <button type="submit" class="btn btn-primary">Agregar</button>
+      </div>
+    </form>
+
+   
+    <div class="filtros">
+      <label>Filtrar por categoría:</label>
+      <select id="filtro-categoria">
+        <option value="">Todas</option>
+        <option value="Semillas">Semillas</option>
+        <option value="Fertilizantes">Fertilizantes</option>
+        <option value="Herramientas">Herramientas</option>
+        <option value="Pesticidas">Pesticidas</option>
+        <option value="Otros">Otros</option>
+      </select>
+    </div>
+
+    <div id="lista-productos" class="lista-productos"></div>
+
+    <p id="contador" class="contador"></p>
+  </section>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
